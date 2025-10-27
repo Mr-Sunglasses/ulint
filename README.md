@@ -18,16 +18,14 @@ A linter for Umbrel apps written in Python.
 
 ```bash
 # using uv tool
-uv tool install ulint
+uv tool install umbrel-linter
 
-# using uvx
-uvx ulint --help
 
 # using pipx
-pipx install ulint
+pipx install umbrel-linter
 
 # using pip
-pip install ulint
+pip install umbrel-linter
 ```
 ### Build from Source
 
@@ -54,10 +52,10 @@ uv pip install -e .
 ulint lint /path/to/app-store
 
 # Lint a specific app
-umbrel-linter lint /path/to/app-store --app my-app
+ulint lint /path/to/app-store --app my-app
 
 # Lint with specific options
-umbrel-linter lint /path/to/app-store \
+ulint lint /path/to/app-store \
     --log-level error \
     --strict \
     --skip-architectures \
@@ -125,7 +123,6 @@ config = LinterConfig(
 
 ## Error Types
 
-The linter identifies various types of issues:
 
 ### YAML Validation Errors
 - Invalid YAML syntax
@@ -172,6 +169,8 @@ uv run mypy .
 
 ### Running Tests
 
+- Note: Some tests are currently failing due to ongoing development.
+
 ```bash
 # Run all tests
 uv run pytest
@@ -182,15 +181,6 @@ uv run pytest --cov=umbrel_linter
 # Run specific test file
 uv run pytest tests/test_models.py
 ```
-
-### Code Quality
-
-The project uses several tools for code quality:
-
-- **Black**: Code formatting
-- **Ruff**: Fast Python linter
-- **MyPy**: Static type checking
-- **Pytest**: Testing framework
 
 ## Contributing
 
